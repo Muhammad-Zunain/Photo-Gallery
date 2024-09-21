@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
 
 // Connect to MongoDB
 
@@ -14,29 +13,21 @@ mongoose
 
 // Define a schema for the user collection
 
-const userSchema = new mongoose.Schema({
-  username: {
+const PostImage = new mongoose.Schema({
+  videoFile: {
     type: String,
-    lowercase: true,
-    trim: true,
-    index: true,
-    required: true,
-    unique: true,
-  },
-  firstName: {
-    type: String,
-    trim: true,
     required: true,
   },
-  lastName: {
+  thumbnail: {
     type: String,
-    trim: true,
+    required: true,
+  },
+  title: {
+    type: String,
     required: true,
   },
   email: {
     type: String,
-    lowercase: true,
-    trim: true,
     required: true,
     unique: true,
   },
@@ -51,19 +42,13 @@ const userSchema = new mongoose.Schema({
 }, { timestamps });
 
 
-// Hash the password before saving the user
-userSchema.pre("save", async function (next) {
-    if (!this.isModified("password")) {
-      return next();
-    }
-  
-    try {
-        this.password = await bcrypt.hash(this.password,10);
-        next();
-    } catch (err) {
-      return next(err);
-    }
-  });
-  
-  // Create and export the model
-export default mongoose.model("User", userSchema);
+animalSchema.methods.hashing(function() {
+    bcrypt.genSalt(this.password, (salt, err) => {
+        if (err) throw err;
+        bcrypt.hash(this.password, salt, (err, hash) => {
+            if (err) throw err;
+            this.password = hash;
+            // next();
+        });
+    })
+})
