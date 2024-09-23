@@ -64,18 +64,17 @@ userSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 // Generate Access Token And set the expire 
-// Generate Access Token and set the expiration
 userSchema.methods.generateAccessToken = function() {
   return jwt.sign(
-    {
-      _id: this._id,
-      email: this.email,
-      username: this.username,
-    },
-    process.env.ACCESS_TOKEN_SECRET,
-    {
-      expiresIn: process.env.ACCESS_TOKEN_EXPIRY, // Corrected here
-    }
+      {
+          _id: this._id,
+          email: this.email,
+          username: this.username
+      },
+      process.env.ACCESS_TOKEN_SECRET,
+      {
+          expiresIn: process.env.ACCESS_TOKEN_EXPIRY // Corrected here
+      }
   );
 };
 
