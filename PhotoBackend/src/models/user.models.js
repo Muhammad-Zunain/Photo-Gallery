@@ -2,16 +2,6 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-// Connect to MongoDB
-
-mongoose
-  .connect("mongodb://localhost:27017/myDatabase", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connected to MongoDB"))
-
-  .catch((err) => console.error("Connection error:", err));
 
 // Define a schema for the user collection
 
@@ -52,7 +42,7 @@ const userSchema = new mongoose.Schema(
       default: null,
     },
   },
-  { timestamps }
+  { timestamps: true }
 );
 
 // Hash the password before saving the user
@@ -81,9 +71,9 @@ userSchema.method.generateAccessToken =  function(){
     email: this.email,
     username: this.username
   },
-  // Add the Access Token from the .env,
+  process.env.ACCESS_TOKEN_SECRET,
   {
-    // expireIn: add expire from the .env
+    expireIn:  process.env.ACCESS_TOKEN_EXPIRY
   }
 )
 };
@@ -93,9 +83,9 @@ userSchema.method.generateRefreshToken =  function(){
   return jwt.sign({
     _id: this._id,
   },
-  // Add the Refresh Token from the .env,
+  process.env.REFRESH_TOKEN_SECRET,
   {
-    // expireIn: add Refresh from the .env
+    expireIn: process.env.REFRESH_TOKEN_EXPIRY
   }
 )
 };
