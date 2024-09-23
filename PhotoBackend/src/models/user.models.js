@@ -59,36 +59,39 @@ userSchema.pre("save", async function (next) {
   }
 });
 
-// Compare  Password is correct for current password 
-userSchema.method.isPasswordCorrect = async function (password) {
- return await bcrypt.compare(password, this.password) 
+// Compare password is correct for current password 
+userSchema.methods.isPasswordCorrect = async function (password) {
+  return await bcrypt.compare(password, this.password);
 };
-
 // Generate Access Token And set the expire 
-userSchema.method.generateAccessToken =  function(){
-  return jwt.sign({
-    _id: this._id,
-    email: this.email,
-    username: this.username
-  },
-  process.env.ACCESS_TOKEN_SECRET,
-  {
-    expireIn:  process.env.ACCESS_TOKEN_EXPIRY
-  }
-)
+// Generate Access Token and set the expiration
+userSchema.methods.generateAccessToken = function() {
+  return jwt.sign(
+    {
+      _id: this._id,
+      email: this.email,
+      username: this.username,
+    },
+    process.env.ACCESS_TOKEN_SECRET,
+    {
+      expiresIn: process.env.ACCESS_TOKEN_EXPIRY, // Corrected here
+    }
+  );
 };
 
-// Generate the Refresh Token And set the expire
-userSchema.method.generateRefreshToken =  function(){
-  return jwt.sign({
-    _id: this._id,
-  },
-  process.env.REFRESH_TOKEN_SECRET,
-  {
-    expireIn: process.env.REFRESH_TOKEN_EXPIRY
-  }
-)
+// Generate the Refresh Token and set the expiration
+userSchema.methods.generateRefreshToken = function() {
+  return jwt.sign(
+    {
+      _id: this._id,
+    },
+    process.env.REFRESH_TOKEN_SECRET,
+    {
+      expiresIn: process.env.REFRESH_TOKEN_EXPIRY, // Corrected here
+    }
+  );
 };
+
 
 // Create and export the model
 export const User = mongoose.model("User", userSchema);
