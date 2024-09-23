@@ -12,6 +12,6 @@ const postImage = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: "User"
   }  
-}, { timestamps });
+}, { timestamps: true });
 
 export const Post = mongoose.model("Post", postImage)
