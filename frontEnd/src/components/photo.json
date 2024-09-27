@@ -1,0 +1,53 @@
+{
+    "photos": [
+      {
+        "id": 1,
+        "title": "Sunset Over the Mountains",
+        "url": "../assets/profile.jpg",
+        "description": "A beautiful sunset over the mountain range, capturing vibrant colors."
+      },
+      {
+        "id": 2,
+        "title": "Ocean Waves",
+        "url": "https://example.com/images/ocean-waves.jpg",
+        "description": "Waves crashing onto the shore, showcasing the beauty of the ocean."
+      },
+      {
+        "id": 3,
+        "title": "Forest Path",
+        "url": "https://example.com/images/forest-path.jpg",
+        "description": "A serene path winding through a lush green forest."
+      },
+      {
+        "id": 4,
+        "title": "City Skyline at Night",
+        "url": "https://example.com/images/city-skyline-night.jpg",
+        "description": "A stunning view of the city skyline illuminated at night."
+      },
+      {
+        "id": 5,
+        "title": "Starry Night Sky",
+        "url": "https://example.com/images/starry-night.jpg",
+        "description": "A breathtaking view of a starry night sky, perfect for stargazing."
+      },
+      {
+        "id": 6,
+        "title": "Starry Night Sky",
+        "url": "https://example.com/images/starry-night.jpg",
+        "description": "A breathtaking view of a starry night sky, perfect for stargazing."
+      },
+      {
+        "id": 7,
+        "title": "Starry Night Sky",
+        "url": "https://example.com/images/starry-night.jpg",
+        "description": "A breathtaking view of a starry night sky, perfect for stargazing."
+      },
+      {
+        "id": 8,
+        "title": "Starry Night Sky",
+        "url": "https://example.com/images/starry-night.jpg",
+        "description": "A breathtaking view of a starry night sky, perfect for stargazing."
+      }
+    ]
+  }
+  

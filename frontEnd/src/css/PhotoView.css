@@ -1,0 +1,31 @@
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem;
+}
+
+.photo-item {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    width: calc(33.333% - 130px); /* Adjust for your layout */
+}
+
+.photo-item img {
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+    border-bottom: 2px solid #FE0094;
+}
+
+.photo-item h4 {
+    margin: 10px;
+    color: #fff;
+}
+
+.photo-item p {
+    margin: 10px;
+    color: #ccc;
+}

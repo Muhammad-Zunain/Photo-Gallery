@@ -23,8 +23,6 @@ const createPost = asyncHandler(async (req, res) => {
         throw new ApiError(400, "Error in Uploading on Cloudinary")
     }
 
-    console.log(postImage)
-
     const post = await Post.create({
         user,
         title,
@@ -34,10 +32,7 @@ const createPost = asyncHandler(async (req, res) => {
         category,
         tags
     })
-
-    console.log(post)
     const postData = await Post.findById(post._id)
-
     if (!postData) {
         throw new ApiError(500, "Something went wrong while creating Post")
     }
@@ -59,9 +54,6 @@ const getAllPost = asyncHandler(async (req, res) => {
         new ApiResponse(200, posts)
     );
 });
-
-
-
 
 const filterPost = asyncHandler(async (req, res) => {
     const { tags, category, views } = req.body;
@@ -91,7 +83,6 @@ const filterPost = asyncHandler(async (req, res) => {
         )
 
     } catch (err) {
-        console.error('Error filtering posts:', err);
         throw new ApiError(500, "Something went wrong while filtering Post catch")
     }
 })

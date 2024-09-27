@@ -1,0 +1,85 @@
+
+
+
+.wrapper_register{
+    min-width: 420px;
+    background: #222;
+    border-radius: 20px;
+    border-bottom: 4px solid #6E1299;
+    border-top: 4px solid #FE0094;
+    border-left: 4px solid #FE0094;
+    border-right: 4px solid #6E1299;
+    box-shadow: 1px 1px 20px 5px #343333 ;
+    overflow: hidden;
+}
+
+.wrapper_register .form_register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+    padding: 4rem;
+
+}
+
+.wrapper_register .form_register h2{
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.inputbox{
+    width: 100%;
+}
+
+
+.form_register .inputbox input{
+    width: 100%;
+    font-size: 1.7rem;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #6E1299;
+    padding: 1rem 4rem 1rem 0.5rem;
+    color: #fff;
+    border-radius: 0px;
+}
+
+.inputbox input:focus{
+    background-color: transparent;
+}
+
+.inputbox i{
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    padding: 0 0;
+    height: 30px;
+    width: 30px;
+    background: transparent;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, .75);
+}
+
+.btn1{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+
+}
+
+.btn1 .account__btn{
+    margin: 1rem 0;   
+    color: #fff;
+    font-size: 1.7rem;
+    width: 100%;
+    cursor: pointer;
+    display: inline-block;
+    background: linear-gradient(90deg, #00229E 0%, #6E1299 47.92%, #FE0094 100%);
+    border-radius: 20px;
+    padding: 1.5rem 3.5rem;
+}
+
+.remember p{
+    font-size: 1.7rem;
+}

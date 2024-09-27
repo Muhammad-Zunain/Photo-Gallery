@@ -3,7 +3,6 @@ import { DB_NAME } from "../constants.js"
 
 
 const DB_URI = process.env.MONGODB_URL
-console.log(DB_URI)
 
 const connection = async () => {
     try {

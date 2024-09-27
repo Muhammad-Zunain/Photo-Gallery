@@ -3,7 +3,6 @@ import { ApiError } from "../utils/ApiError.js"
 import { ApiResponse } from "../utils/ApiResponse.js"
 import { User } from "../models/user.models.js"
 
-
 const generateAccessAndRefreshToken = async (userID) => {
     try {
         const user = await User.findById(userID); 
@@ -95,7 +94,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
     const options = {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production', // Adjust for development
+        secure: false,
     };
 
     return res

@@ -1,0 +1,113 @@
+
+.photogallery{
+    height: 100vh;
+    width: 100%;
+    background: #1c1c1c;
+}
+
+.main__user__dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 2rem;
+    border: 2px solid firebrick;
+    padding: 6rem 0rem;
+    height: inherit;
+}
+
+.profile__dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.4rem;
+    width: 23%;
+    border-radius: 10px;
+    background-color: #333333;
+    height: 100%;
+}
+
+.photo__dashboard {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    row-gap: 2rem;
+    background-color: #333333;
+    border-radius: 10px;
+}
+
+
+.profile__view {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 0.8rem;
+}
+
+.profile__view img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 0.5rem;
+    border-right: 4px solid #6E1299;
+    border-bottom: 4px solid #FE0094;
+    border-top: 4px solid hsl(325, 100%, 50%);
+    border-left: 4px solid #6E1299;
+}
+
+.profile__view :nth-child(2) {
+    font-weight: var(--weight--bolder);
+    font-size: 2rem;
+    text-transform: capitalize;
+    line-height: 20px;
+}
+
+.profile__view :nth-child(3) {
+    color: #FE0094;
+    line-height: 20px;
+}
+
+.select__view {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1.5rem;
+    margin-top: 4rem;
+}
+.select__view li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+.select__view .buttonActive {
+    border-radius: 6px;
+    background-color: #FE0094;
+    color: white;
+}
+.select__view i {
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    font-size: 1.9rem;
+    margin-right: 2rem;
+}
+
+.select__view li a {
+    font-size: 1.7rem;
+    color: #fff; 
+    text-decoration: none; /* Remove underline */
+    flex: 1; 
+    padding: 1rem 2rem;
+}
+.select__view .buttonActive a {
+    color: var(--font--white--color); /* Text color in active state */
+}
+
+.select__view .buttonActive i {
+    color: var(--font--white--color); /* Icon color in active state */
+}
